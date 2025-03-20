@@ -1,0 +1,23 @@
+
+@font-face {
+  font-family: "Neue Montreal Medium";
+  src: url("{{ 'NeueMontreal-Medium.otf' | asset_url }}") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal Regular";
+  src: url("{{ 'NeueMontreal-Regular.otf' | asset_url }}") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+h1, h2, h3, h4, h5 {
+font-family: 'Neue Montreal Medium', sans-serif !important;
+}
+
+p, body {
+  font-family: 'Neue Montreal Regular', sans-serif !important;
+}
