@@ -5,6 +5,9 @@
 .fixed {
   position: fixed;
 }
+.relative {
+  position: relative;
+}
 .static {
   position: static;
 }
@@ -14,8 +17,14 @@
 .container {
   width: 100%;
 }
+.mx-auto {
+  margin-inline: auto;
+}
 .block {
   display: block;
+}
+.flex {
+  display: flex;
 }
 .grid {
   display: grid;
@@ -26,14 +35,35 @@
 .table {
   display: table;
 }
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
+}
+.h-auto {
+  height: auto;
+}
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
 .transform {
   transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
 }
 .resize {
   resize: both;
 }
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
 .flex-wrap {
   flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
 }
 .truncate {
   overflow: hidden;
@@ -42,6 +72,9 @@
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.object-cover {
+  object-fit: cover;
 }
 .capitalize {
   text-transform: capitalize;

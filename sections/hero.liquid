@@ -1,0 +1,104 @@
+<div class="w-full bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center">
+    <div class="w-full md:w-1/2 mb-10 md:mb-0 md:pr-8">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
+        {{ section.settings.heading }}
+      </h1>
+      <div class="mb-8 text-lg max-w-xl">
+        <p>{{ section.settings.text }}</p>
+      </div>
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_url }}" class="button button--primary">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+    <div class="w-full md:w-1/2">
+      {% if section.settings.image != blank %}
+        <div class="relative rounded-3xl overflow-hidden">
+          {{
+            section.settings.image
+            | image_url: width: 1500
+            | image_tag:
+              loading: 'lazy',
+              class: 'w-full h-auto',
+              sizes: '(min-width: 768px) 50vw, 100vw',
+              widths: '375, 550, 750, 1100, 1500'
+          }}
+        </div>
+      {% else %}
+        <div class="relative rounded-3xl overflow-hidden bg-gray-200 aspect-[4/3]">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full object-cover' }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Life Improvements Require Home Improvements",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "default": "Our wide selection of furniture pieces are designed to bring both style and comfort to any space.",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Shop now",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "settings": {
+        "heading": "Life Improvements Require Home Improvements",
+        "text": "Our wide selection of furniture pieces are designed to bring both style and comfort to any space.",
+        "button_label": "Shop now"
+      }
+    }
+  ]
+}
+{% endschema %}
